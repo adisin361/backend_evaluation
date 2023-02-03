@@ -50,34 +50,3 @@ const fetchData = async ({ urlLink }) => {
 module.exports = {
   fetchData
 };
-
-
-
-
-
-
-
-
-
-
-
-const getCompanyById = async (id) => {
-  return await companies.findOne({
-    where: {
-      id: id
-    }
-  });
-};
-
-const getCompaniesBySector = async (sector_id) => {
-  return await companies.findAll({
-    where: {
-      sector_id: sector_id
-    }
-  });
-};
-
-module.exports = {
-  getCompanyById,
-  getCompaniesBySector
-};

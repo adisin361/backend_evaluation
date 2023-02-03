@@ -36,9 +36,9 @@ const fetchData = async ({ urlLink }) => {
     sectorData.data.forEach(async (secData) => {
       const score = ((Number(secData.performanceIndex[0].value) * 10) + (Number(secData.performanceIndex[1].value) / 10000) + (Number(secData.performanceIndex[2].value) * 10) + Number(secData.performanceIndex[3].value)) / 4;
 
-      await companies.update({ sector_id: newSector.data.id, score: score }, {
+      await companies.update({ sector_id: newSector.id, score: `${score}` }, {
         where: {
-          id: secData.companyId
+          id: secData.companyId,
         }
       });
     });

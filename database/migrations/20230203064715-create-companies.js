@@ -19,10 +19,10 @@ module.exports = {
         type: Sequelize.STRING
       },
       score: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
       },
       sector_id: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
       },
       address: {
         type: Sequelize.STRING

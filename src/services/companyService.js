@@ -46,6 +46,19 @@ const fetchData = async ({ urlLink }) => {
   return companies.findAll();
 };
 
+const updateCompanyDetails = async (id, body) => {
+  const company = await companies.findOne({ where: { id: id } });
+  if (!company)
+    return {};
+  const ceo = body.ceo ? body.ceo : company.data.ceo;
+  const address = body.address ? body.address : company.data.address;
+
+
+  companies.update({ ceo: ceo, address: address }, { where: { id: id } });
+  return companies.findAll({ where: { id: id } });
+};
+
 module.exports = {
-  fetchData
+  fetchData,
+  updateCompanyDetails
 };

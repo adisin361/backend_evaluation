@@ -5,7 +5,7 @@ const { getCompanyUrl, getSectorUrl } = require('../helper');
 const axios = require('axios');
 const fetchData = async ({ urlLink }) => {
   const csv = await axios.get(urlLink);
-  const lines = utils.readDataByLine(csv);
+  const lines = utils.readData(csv);
 
   lines.forEach(async (line, index) => {
     if (index === 0) {
@@ -14,10 +14,9 @@ const fetchData = async ({ urlLink }) => {
     const data = utils.splitString(line);
     const companyData = await axios.get(`${getCompanyUrl}${data[0]}`);
     const company = {
-      id: companyData.id,
-      name: companyData.name,
-      ceo: companyData.ceo,
-      description: companyData.description,
+      id: companyData.data.id,
+      name: companyData.data.name,
+      ceo: companyData.data.ceo
     };
     await companies.create(company);
   });

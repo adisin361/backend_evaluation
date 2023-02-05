@@ -12,4 +12,17 @@ const save = async (req, res) => {
   }
 };
 
-module.exports = { save };
+const updateCompany = async (req, res) => {
+  try {
+    const id = req.query.id;
+    const body = req.body;
+    const data = await companyService.updateCompanyDetails(id, body);
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).json({
+      error: error.message
+    });
+  }
+};
+
+module.exports = { save, updateCompany };

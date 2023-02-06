@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "92978059-ef24-470e-9c5b-ded7e87f2490",
+		"name": "Backend Eval",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16830022"
+	},
+	"item": [
+		{
+			"name": "Fetch from URL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"urlLink\": \"https://store-0001.s3.amazonaws.com/input.csv\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/api/save",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"save"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"urlLink\": \"https://store-0001.s3.amazonaws.com/input.csv\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5050/api/save",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"save"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "936"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3a8-LmjpBbXEg+DmM5dYCN6+U9+/lXs\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Feb 2023 05:00:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"c1634e16-17c8-42f6-8513-b8c50a4f230c\",\n        \"name\": \"Axis\",\n        \"score\": \"26.65\"\n    },\n    {\n        \"id\": \"e245b12c-5b3b-4a83-a4ad-391974b34a37\",\n        \"name\": \"IDFC\",\n        \"score\": \"22.76\"\n    },\n    {\n        \"id\": \"c144e397-bef9-4aa1-aef4-842f4da44f9c\",\n        \"name\": \"Ebay\",\n        \"score\": \"17.41\"\n    },\n    {\n        \"id\": \"24ca0568-d946-4c14-a0d7-eb81295b7a9e\",\n        \"name\": \"D-Mart\",\n        \"score\": \"19.57\"\n    },\n    {\n        \"id\": \"ed4fc91d-8ac8-4882-a9e9-071a88423ca5\",\n        \"name\": \"Walmart\",\n        \"score\": \"16.08\"\n    },\n    {\n        \"id\": \"46e1d061-e39d-4d5c-8e0e-3fa5d45d9efc\",\n        \"name\": \"Apple\",\n        \"score\": \"29.99\"\n    },\n    {\n        \"id\": \"8727cc61-8c4b-4285-8853-2db808392c04\",\n        \"name\": \"Google\",\n        \"score\": \"13.27\"\n    },\n    {\n        \"id\": \"e90a7bc7-47fa-49af-bfa1-391fe7768b56\",\n        \"name\": \"Meta\",\n        \"score\": \"13.10\"\n    },\n    {\n        \"id\": \"b6472c52-732a-4fd2-a463-ae604c0a2c79\",\n        \"name\": \"Microsoft\",\n        \"score\": \"21.32\"\n    },\n    {\n        \"id\": \"95b5a067-808a-44a9-a490-b4ef8a045f61\",\n        \"name\": \"Volkswagen\",\n        \"score\": \"15.78\"\n    },\n    {\n        \"id\": \"728ae3b7-89dd-41eb-9608-4fc20c839d4c\",\n        \"name\": \"Mercedes\",\n        \"score\": \"18.48\"\n    },\n    {\n        \"id\": \"296247ef-c553-4704-ad67-0878c87ff729\",\n        \"name\": \"HDFC\",\n        \"score\": \"21.48\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "PATCH for ceo and address",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ceo\": \"mark zuck\",\n    \"address\": \"USA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/api/update?id=8727cc61-8c4b-4285-8853-2db808392c04",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8727cc61-8c4b-4285-8853-2db808392c04"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ceo\": \"mark zuck\",\n    \"address\": \"USA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5050/api/update?id=8727cc61-8c4b-4285-8853-2db808392c04",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"api",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "8727cc61-8c4b-4285-8853-2db808392c04"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "225"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e1-TYzK9KlrLVmSfeclWp6wfoxr7N8\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Feb 2023 05:09:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"8727cc61-8c4b-4285-8853-2db808392c04\",\n        \"name\": \"Google\",\n        \"ceo\": \"mark zuck\",\n        \"description\": null,\n        \"score\": \"13.27\",\n        \"sector_id\": 11,\n        \"address\": \"USA\",\n        \"createdAt\": \"2023-02-05T11:45:32.912Z\",\n        \"updatedAt\": \"2023-02-06T05:09:07.377Z\"\n    }\n]"
+				}
+			]
+		}
+	]
+}
